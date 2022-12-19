@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter/about.dart';
+import 'package:portfolio_flutter/main_provider.dart';
+import 'package:portfolio_flutter/skills_page.dart';
+import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HeaderPage extends StatefulWidget {
   const HeaderPage({super.key});
@@ -63,7 +68,11 @@ class _HeaderPageState extends State<HeaderPage> {
                 ),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<MainProvider>().setSelectedPage(
+                        const AboutPage(),
+                      );
+                },
                 child: const Text(
                   "About",
                   style: TextStyle(
@@ -87,7 +96,11 @@ class _HeaderPageState extends State<HeaderPage> {
                 ),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<MainProvider>().setSelectedPage(
+                        const SkillsPage(),
+                      );
+                },
                 child: const Text(
                   "Skills",
                   style: TextStyle(
@@ -150,6 +163,12 @@ class _HeaderPageState extends State<HeaderPage> {
             width: 18,
           ),
           InkWell(
+            onTap: () async {
+              Uri uri = Uri.parse("https://github.com/encrustace");
+              if (!await launchUrl(uri)) {
+                throw 'Could not launch $uri';
+              }
+            },
             child: Container(
               height: 36,
               padding: const EdgeInsets.all(6),

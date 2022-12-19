@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter/about.dart';
 import 'package:portfolio_flutter/header_page.dart';
 import 'package:portfolio_flutter/left_panel_page.dart';
+import 'package:portfolio_flutter/main_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,6 +15,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    context.read<MainProvider>().setHeightWidth(height, width);
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -31,8 +37,10 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 const LeftPanelPage(),
-                Expanded(
-                  child: Container(),
+                SizedBox(
+                  height: height - 80,
+                  width: width - 100,
+                  child: context.watch<MainProvider>().getSelectedPage,
                 ),
               ],
             ),

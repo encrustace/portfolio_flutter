@@ -35,7 +35,9 @@ class LeftPanelPage extends StatelessWidget {
             height: 24,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              _launchUrl("https://linkedin.com/in/encrustace/");
+            },
             icon: const Icon(
               FontAwesomeIcons.linkedin,
               color: Colors.white,
@@ -45,7 +47,9 @@ class LeftPanelPage extends StatelessWidget {
             height: 24,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              _launchUrl("https://twitter.com/encrustace/");
+            },
             icon: const Icon(
               FontAwesomeIcons.twitter,
               color: Colors.white,
@@ -55,7 +59,9 @@ class LeftPanelPage extends StatelessWidget {
             height: 24,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              _launchUrl("https://reddit.com/user/encrustace");
+            },
             icon: const Icon(
               FontAwesomeIcons.reddit,
               color: Colors.white,
