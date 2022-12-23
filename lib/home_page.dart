@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/about.dart';
 import 'package:portfolio_flutter/header_page.dart';
 import 'package:portfolio_flutter/left_panel_page.dart';
 import 'package:portfolio_flutter/main_provider.dart';
