@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_flutter/anim_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LeftPanelPage extends StatelessWidget {
@@ -22,53 +23,41 @@ class LeftPanelPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          IconButton(
-            onPressed: () {
+          AnimButton(
+            icon: FontAwesomeIcons.github,
+            onClick: () {
               _launchUrl("https://github.com/encrustace");
             },
-            icon: const Icon(
-              FontAwesomeIcons.github,
-              color: Colors.white,
-            ),
           ),
           const SizedBox(
-            height: 24,
+            height: 28,
           ),
-          IconButton(
-            onPressed: () {
+          AnimButton(
+            icon: FontAwesomeIcons.linkedin,
+            onClick: () {
               _launchUrl("https://linkedin.com/in/encrustace/");
             },
-            icon: const Icon(
-              FontAwesomeIcons.linkedin,
-              color: Colors.white,
-            ),
           ),
           const SizedBox(
-            height: 24,
+            height: 28,
           ),
-          IconButton(
-            onPressed: () {
+          AnimButton(
+            icon: FontAwesomeIcons.twitter,
+            onClick: () {
               _launchUrl("https://twitter.com/encrustace/");
             },
-            icon: const Icon(
-              FontAwesomeIcons.twitter,
-              color: Colors.white,
-            ),
           ),
           const SizedBox(
-            height: 24,
+            height: 28,
           ),
-          IconButton(
-            onPressed: () {
+          AnimButton(
+            icon: FontAwesomeIcons.reddit,
+            onClick: () {
               _launchUrl("https://reddit.com/user/encrustace");
             },
-            icon: const Icon(
-              FontAwesomeIcons.reddit,
-              color: Colors.white,
-            ),
           ),
           const SizedBox(
-            height: 24,
+            height: 28,
           ),
           Container(
             width: 2,
